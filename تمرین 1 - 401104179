@@ -1,5 +1,5 @@
-#Alireza Saidi-Nejat (401104179)
-#تمرین اول
+# 401104179
+# تمرین اول 
 
 class Building: 
     def __init__(self,Name,Building,Owner,Address,Age,Worth):
