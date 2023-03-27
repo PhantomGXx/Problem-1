@@ -1,2 +1,352 @@
-#Problem 1
-# :O
+#Alireza Saidi-Nejat (401104179)
+#تمرین اول
+
+class Building: 
+    def __init__(self,Name,Building,Owner,Address,Age,Worth):
+        self.Name = Name
+        self.Building = Building
+        self.Owner = Owner
+        self.Usage = ''
+        self._Address = Address
+        self.Age = Age
+        self.Worth = Worth
+    
+    def Description(self):
+        return f"{self.Name} {self.Building} is owned by {self.Owner} and used as a(n) {self.Usage} building by the address {self._Address}, built {self.Age} years ago and worth {self.Worth} dollars."
+    
+    def Enter(self,x='A person'):
+        return f"{x} has entered {self.Name} {self.Building}."
+    
+    def Exit(self,x='A person'):
+        return f"{x} has exited {self.Name} {self.Building}."
+    
+    def Sell(self,x='A buyer'):
+        return f"{self.Owner} has sold the entire building for {self.Worth} dollars to {x}."
+    
+    def Buy(self,x='the Previous Owner'):
+        return f"{self.Owner} has bought the entire building for {self.Worth} dollars from {x}."
+ 
+    
+class Apartment(Building):
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfLevels,NumberOfApartments,NumberOfResidents,CaretakerName,MonthlyPayment):
+        super().__init__(Name,Building,Owner,Address,Age,Worth)
+        self.Usage = 'Residential'
+        self.NumberOfLevels = NumberOfLevels
+        self.NumberOfApartments = NumberOfApartments
+        self.NumberOfResidents = NumberOfResidents
+        self.CaretakerName = CaretakerName
+        self.MonthlyPayment = MonthlyPayment
+    
+    def Payment(self,x = 'A resident'):
+        return f"{x} has paid the Monthly payment of {self.MonthlyPayment} dollars in {self.Name} {self.Building}."
+        
+    def Advertisement(self):
+        return f"{self.Name} {self.Building} has {self.NumberOfLevels} levels with {self.NumberOfApartments} homes inside. Each home is worth {(self.Worth / self.NumberOfApartments)} dollars. Join the neighborhood today!"
+    
+    def CallCaretaker(self,x = 'A resident'):
+        return f"{x} calls {self.CaretakerName}."
+    
+    def Sleep(self,x = 'A resident'):
+        return f"{x} goes to sleep inside their apartment in {self.Name} {self.Building}."
+    
+    def Partying(self,x = 'A resident'):
+        return f"{x} is having a party in their apartment in {self.Name} {self.Building}."
+    
+    def Report(self,x = 'A resident'):
+        return f"{x} is upset and reports the noise being made by another resident in {self.Name} {self.Building}."
+ 
+    
+class Office(Building):
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfEmployees,NumberOfOffices,MonthlySalary):
+        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+        self.Usage = 'Business/Commercial'
+        self.NumberOfEmployees = NumberOfEmployees
+        self.NumberOfOffices = NumberOfOffices
+        self.MonthlySalary = MonthlySalary
+        
+    def ReceiveSalary(self,x = 'An employee'):
+        return f"{x} is given his monthly salary of {self.MonthlySalary} dollars."
+    
+    def ReportToHR(self,x = 'An employee'):
+        return f"{x} reports an issue to HR."
+    
+    def Promotion(self,x = 'An employee'):
+        return f"{x} receives a promotion at {self.Name} {self.Building}."
+    
+    def Fire(self,x = 'An employee'):
+        return f"{x} was fired from their job at {self.Name} {self.Building}."
+   
+    
+class Restaurant(Building):
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfMenuItems,NumberOfTables,NumberOfChefs,NumberOfWaiters):
+        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+        self.Usage = 'Commercial'
+        self.NumberOfMenuItems = NumberOfMenuItems
+        self.NumberOfTables = NumberOfTables
+        self.NumberOfChefs = NumberOfChefs
+        self.NumberOfWaiters = NumberOfWaiters
+    
+    def Order(self,x):
+        if str(x).isdigit() and int(x) <= self.NumberOfMenuItems :
+            return f"Your order of Number {x} of the menu will be served soon."
+        else:
+            return "Such item does not exist. Try again."
+    
+    def Eat(self,x='A customer'):
+        return f"{x} is eating their food."
+    
+    def Waiter(self,x='A customer'):
+        i = 1
+        if i < self.NumberOfWaiters:
+            return f"{x} is in need of a Waiter."
+        else:
+            return"Our waiters are busy now. Please wait."
+        i += 1
+    
+    def Rate(self,x='A customer',y = 'None'):
+        if str(y).isdigit() and int(y) >= 0 and int(y) <= 5:
+            return f"{x} has rated {self.Name} {self.Building} as {y} stars!"
+        elif y == 'None':
+            return f"{x} has no opinion for {self.Name} {self.Building}."
+        else:
+            return "That's not possible, Dear Customer."
+    
+    def Cook(self):
+        return "The {self.NumberOfChefs} chefs are all busy in the kitchen."
+
+    
+class Mall(Building):
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfLevels,NumberOfShops):
+        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+        self.Usage = 'Commercial/Public/Business'
+        self.NumberOfLevels = NumberOfLevels
+        self.NumberOfShops = NumberOfShops
+    
+    def Advertisement(self):
+        return f"This majestic {self.Building} was built {self.Age} years ago and is owned by {self.Owner}. Come and enjoy our numerous shops, {self.NumberOfShops} to be exact. And don't forget to check the Food Level!"
+    
+    def Shop(self,x='A customer'):
+        return f"{x} is shopping in {self.Name} {self.Building}."
+    
+    def FoodLevel(self,x='A customer'):
+        return f"{x} is looking around the Food Level of {self.Name} {self.Building} for something to eat."
+    
+    def Lounge(self,x='A customer'):
+        return f"{x} is sitting on the bench in {self.Name} {self.Building} and waiting for their partner to finish shopping."
+ 
+    
+class Bank(Building):
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfSafes,NumberOfEmployees,NumberOfGuards):
+        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+        self.Usage = 'Business'
+        self.NumberOfSafes = NumberOfSafes
+        self.NumberOfEmployees = NumberOfEmployees
+        self.__NumberOfGuards = NumberOfGuards
+        
+    def Deposit(self,x='A customer',y='An amount'):
+        return f"{x} has deposited {y} into his account in {self.Name} {self.Building}."
+
+    def Withdraw(self,x='A customer',y='An amount'):
+        return f"{x} has withdrawed {y} from his account in {self.Name} {self.Building}."
+
+    def Transfer(self,x='A customer',y='An amount',z='another persons account'):
+        return f"{x} has transfered {y} from his account in {self.Name} {self.Building} to {z}."
+    
+    def Security(self):
+        if int(self.__NumberOfGuards) >= int(self.NumberOfSafes / 5):
+            return f"{self.Name} {self.Building} has a reasonable amount of Security."
+        else:
+            return f"{self.Name} {self.Building} does not have a reasonable amount of Security."
+
+class Theater(Building):
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfTheaters,NumberOfEmployees):
+        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+        self.Usage = 'Entertainment/Commercial'
+        self.NumberOfTheaters = NumberOfTheaters
+        self.NumberOfEmployees = NumberOfEmployees
+    
+    def Watch(self,x='An Audience Member'):
+        return f"{x} is watching a movie in the hall of {self.Name} {self.Building}. Please remain quiet."
+    
+    def Noise(self,x='An Audience Member'):
+        return f"{x} is making noise in the middle of a movie! Please show them the exit."
+    
+    def Popcorn(self,x='An Audience Member'):
+        return f"{x} is buying popcorn before the movie in hall {self.NumberOfTheaters - 1}."
+    
+
+class Church(Building):
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfClergies):
+        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+        self.Usage = 'Religious'
+        self.NumberOfClergies = NumberOfClergies
+        
+    def Pray(self,x='A Christian'):
+        return f"{x} is praying inside {self.name} Church."
+    
+    def Donate(self,x='A Christian',y='an amount'):
+        if y != 'an amount':
+            return f"{x} donates {y} dollars to {self.name} {self.Building}."
+        else:
+            return f"{x} donates {y} to {self.name} {self.Building}."
+
+class Mosque(Building):
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfKhadems):
+        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+        self.Usage = 'Religious'
+        self.NumberOfKhadems = NumberOfKhadems
+        
+    def Pray(self,x='A Muslim'):
+        return f"{x} is praying inside {self.name} Mosque."
+    
+    def Donate(self,x='A Muslim',y='an amount'):
+        if y != 'an amount':
+            return f"{x} donates {y} dollars to {self.name} {self.Building}."
+        else:
+            return f"{x} donates {y} to {self.name} {self.Building}."
+        
+
+class Shop(Building):
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,Category,NumberOfEmployees):
+        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+        self.Usage = 'Commercial'
+        self.Category = Category
+        self.NumberOfEmployees = NumberOfEmployees
+    
+    def Advertisement(self):
+        return f"Come on in and check out the items we sell in {self.Name}! Cheap Prices and Great Quality for {self.Category}!"
+    
+    def Shop(self,x='A customer'):
+        return f"{x} is shopping in {self.Name} {self.Building}."
+    
+    def Return(self,x='A customer',y='item'):
+        return f"{x} is trying to return the {y} they bought from {self.Name} {self.Building}."
+        
+    
+class Warehouse(Building):
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfStorages,NumberOfEmployees,NumberOfGuards):
+        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+        self.Usage = 'Commercial'
+        self.NumberOfStorages = NumberOfStorages
+        self.NumberOfEmployees = NumberOfEmployees
+        self.__NumberOfGuards = NumberOfGuards
+    
+    def StoreItem(self,x='An item',y='a Client'):
+        return f"{x} was stored inside {y}s Storage Unit in {self.Name} {self.Building}."
+        
+    def CollectItem(self,x='An item',y='a Client'):
+        return f"{x} was collected from {y}s Storage Unit in {self.Name} {self.Building}."
+   
+    def Security(self):
+        if int(self.__NumberOfGuards) >= int(self.NumberOfStorages / 6):
+            return f"{self.Name} {self.Building} has a reasonable amount of Security."
+        else:
+            return f"{self.Name} {self.Building} does not have a reasonable amount of Security."
+
+    
+class ParkingLot(Building):
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,ParkingFee,NumberOfParkingSpaces):
+        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+        self.Usage = 'Community Type'
+        self.ParkingFee = ParkingFee
+        self.NumberOfParkingSpaces = NumberOfParkingSpaces
+        
+    def Park(self,x='A person'):
+        return f"{x} parked their car in {self.Name} {self.Building}."
+        
+    def Leave(self,x='A person'):
+        return f"{x} left with their car from {self.Name} {self.Building}."
+        
+    def Payment(self,x='A person'):
+        return f"{x} paid {self.ParkingFee} for parking their car in {self.Name} {self.Building}."
+        
+
+class Park(Building):
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfBenches,NumberOfTrashbins):
+        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+        self.Usage = 'Public'
+        self.NumberOfBenches = NumberOfBenches
+        self.NumberOfTrashbins = NumberOfTrashbins
+        
+    def Rest(self,x='A person'):
+        return f"{x} is resting in {self.Name} {self.Building}."
+        
+    def Play(self,x='A person'):
+        return f"{x} is playing in {self.Name} {self.Building}."
+        
+        
+class Library(Building):
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfBooks,NumberOfLibrarians):
+        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+        self.Usage = 'Public/Educational'
+        self.NumberOfBooks = NumberOfBooks
+        self.NumberOfLibrarians = NumberOfLibrarians
+        
+    def RentBook(self,x='A person',y='a book'):
+        return f"{x} rented {y} from {self.Name} {self.Building}."
+        
+    def ReturnBook(self,x='A person',y='a book'):
+        return f"{x} returned {y} to {self.Name} {self.Building}."
+        
+
+class FamilyHome(Building):
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfFamilyMembers,NumberOfPets,NumberOfBathrooms):
+        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+        self.Usage = 'Residential'
+        self.NumberOfFamilyMembers = NumberOfFamilyMembers
+        self.NumberOfPets = NumberOfPets
+
+    def Introduction(self):
+        return f"The family of {self.Owner} lives in this lovely house, along with {self.NumberOfFamilyMembers} others and {self.NumberOfPets} pets."
+
+
+class TownHall(Building):   
+    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfEmployees,NumberOfElectedOfficials):
+        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+        self.Usage = 'Governmental'
+        self.NumberOfEmployees = NumberOfEmployees
+        self.NumberOfElectedOfficials = NumberOfElectedOfficials
+
+    def StartMeeting(self,x = 'A committee member'):
+        return f"{x} starts a meeting in {self.Name} {self.Building}."
+
+    def EndMeeting(self,x = 'A committee member'):
+        return f"{x} ends a meeting in {self.Name} {self.Building}."
+
+    def Vote(self,x = 'A committee member',y='a proposition'):
+        return f"{x} votes for {y} in a meeting in {self.Name} {self.Building}."
+
+#Examples
+
+Apartment101 = Apartment('Luxury','Apartment','Mr Smith','Nova Lane, Bobcat St., MO 64473-7342',64,100000,5,10,26,'Jones',75)
+print(Apartment101.Description())
+print(Apartment101.NumberOfResidents)
+print(Apartment101.Advertisement())
+print(Apartment101.Partying('Jane'))
+print(Apartment101.Report())
+
+
+Library101 = Library('Calabasus','Library','Leone Learning Institute','Calabasus Avenue, PO 843251',16,25000,3200,8)
+print(Library101.Description())
+print(Library101.NumberOfBooks)
+print(Library101.Enter('Nick'))
+print(Library101.RentBook('Sam','The Spiderwich Chronicles'))
+
+
+Restaurant101 = Restaurant('Olive Guarden','Restaurant','The Cheesecake Co.','Blue Lake St.,Swan Alley, Third Building from the block',6,40000,22,10,4,4)
+print(Restaurant101.Description())
+print(Restaurant101.NumberOfChefs)
+print(Restaurant101.Rate('Max'))
+print(Restaurant101.Rate('The inspector','3'))
+
+
+Bank101 = Bank('Citi','Bank','The Richardson Family','Saint Floren, Rudnick Ave',21,140000,32,15,8)
+print(Bank101.Description())
+print(Bank101.Security())
+print(Bank101.Sell('The Ellison Family'))
+
+#Composition:
+Builds = []
+for i in Building.__subclasses__():
+    Builds.append(str(i)[17:-2])
+print('Builds =',Builds)
