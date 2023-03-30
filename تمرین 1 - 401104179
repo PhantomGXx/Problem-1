@@ -26,7 +26,8 @@ class Building:
     def Buy(self,x='the Previous Owner'):
         return f"{self.Owner} has bought the entire building for {self.Worth} dollars from {x}."
  
-    
+ 
+#Subclass 1   
 class Apartment(Building):
     def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfLevels,NumberOfApartments,NumberOfResidents,CaretakerName,MonthlyPayment):
         super().__init__(Name,Building,Owner,Address,Age,Worth)
@@ -55,7 +56,8 @@ class Apartment(Building):
     def Report(self,x = 'A resident'):
         return f"{x} is upset and reports the noise being made by another resident in {self.Name} {self.Building}."
  
-    
+ 
+#Subclass 2    
 class Office(Building):
     def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfEmployees,NumberOfOffices,MonthlySalary):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
@@ -76,7 +78,8 @@ class Office(Building):
     def Fire(self,x = 'An employee'):
         return f"{x} was fired from their job at {self.Name} {self.Building}."
    
-    
+   
+#Subclass 3   
 class Restaurant(Building):
     def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfMenuItems,NumberOfTables,NumberOfChefs,NumberOfWaiters):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
@@ -114,7 +117,8 @@ class Restaurant(Building):
     def Cook(self):
         return "The {self.NumberOfChefs} chefs are all busy in the kitchen."
 
-    
+
+#Subclass 4    
 class Mall(Building):
     def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfLevels,NumberOfShops):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
@@ -134,7 +138,8 @@ class Mall(Building):
     def Lounge(self,x='A customer'):
         return f"{x} is sitting on the bench in {self.Name} {self.Building} and waiting for their partner to finish shopping."
  
-    
+ 
+#Subclass 5    
 class Bank(Building):
     def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfSafes,NumberOfEmployees,NumberOfGuards):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
@@ -158,6 +163,8 @@ class Bank(Building):
         else:
             return f"{self.Name} {self.Building} does not have a reasonable amount of Security."
 
+
+#Subclass 6
 class Theater(Building):
     def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfTheaters,NumberOfEmployees):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
@@ -174,7 +181,8 @@ class Theater(Building):
     def Popcorn(self,x='An Audience Member'):
         return f"{x} is buying popcorn before the movie in hall {self.NumberOfTheaters - 1}."
     
-
+    
+#Subclass 7
 class Church(Building):
     def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfClergies):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
@@ -190,6 +198,8 @@ class Church(Building):
         else:
             return f"{x} donates {y} to {self.name} {self.Building}."
 
+
+#Subclass 8
 class Mosque(Building):
     def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfKhadems):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
@@ -206,6 +216,7 @@ class Mosque(Building):
             return f"{x} donates {y} to {self.name} {self.Building}."
         
 
+#Subclass 9
 class Shop(Building):
     def __init__(self,Name,Building,Owner,Address,Age,Worth,Category,NumberOfEmployees):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
@@ -222,7 +233,8 @@ class Shop(Building):
     def Return(self,x='A customer',y='item'):
         return f"{x} is trying to return the {y} they bought from {self.Name} {self.Building}."
         
-    
+
+#Subclass 10
 class Warehouse(Building):
     def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfStorages,NumberOfEmployees,NumberOfGuards):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
@@ -243,7 +255,8 @@ class Warehouse(Building):
         else:
             return f"{self.Name} {self.Building} does not have a reasonable amount of Security."
 
-    
+
+#Subclass 11
 class ParkingLot(Building):
     def __init__(self,Name,Building,Owner,Address,Age,Worth,ParkingFee,NumberOfParkingSpaces):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
@@ -260,7 +273,8 @@ class ParkingLot(Building):
     def Payment(self,x='A person'):
         return f"{x} paid {self.ParkingFee} for parking their car in {self.Name} {self.Building}."
         
-
+        
+#Subclass 12
 class Park(Building):
     def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfBenches,NumberOfTrashbins):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
@@ -274,7 +288,8 @@ class Park(Building):
     def Play(self,x='A person'):
         return f"{x} is playing in {self.Name} {self.Building}."
         
-        
+
+#Subclass 13
 class Library(Building):
     def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfBooks,NumberOfLibrarians):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
@@ -289,6 +304,7 @@ class Library(Building):
         return f"{x} returned {y} to {self.Name} {self.Building}."
         
 
+#Subclass 14
 class FamilyHome(Building):
     def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfFamilyMembers,NumberOfPets,NumberOfBathrooms):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
@@ -300,6 +316,7 @@ class FamilyHome(Building):
         return f"The family of {self.Owner} lives in this lovely house, along with {self.NumberOfFamilyMembers} others and {self.NumberOfPets} pets."
 
 
+#Subclass 15
 class TownHall(Building):   
     def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfEmployees,NumberOfElectedOfficials):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
