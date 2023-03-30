@@ -1,6 +1,8 @@
 # 401104179
 # تمرین اول 
 
+BuildingList = [] #For composition of classes.
+
 class Building: 
     def __init__(self,Name,Building,Owner,Address,Age,Worth):
         self.Name = Name
@@ -10,7 +12,7 @@ class Building:
         self._Address = Address
         self.Age = Age
         self.Worth = Worth
-    
+        
     def Description(self):
         return f"{self.Name} {self.Building} is owned by {self.Owner} and used as a(n) {self.Usage} building by the address {self._Address}, built {self.Age} years ago and worth {self.Worth} dollars."
     
@@ -37,6 +39,7 @@ class Apartment(Building):
         self.NumberOfResidents = NumberOfResidents
         self.CaretakerName = CaretakerName
         self.MonthlyPayment = MonthlyPayment
+        BuildingList.append(f"{self.Name} {self.Building}")
     
     def Payment(self,x = 'A resident'):
         return f"{x} has paid the Monthly payment of {self.MonthlyPayment} dollars in {self.Name} {self.Building}."
@@ -65,6 +68,7 @@ class Office(Building):
         self.NumberOfEmployees = NumberOfEmployees
         self.NumberOfOffices = NumberOfOffices
         self.MonthlySalary = MonthlySalary
+        BuildingList.append(f"{self.Name} {self.Building}")
         
     def ReceiveSalary(self,x = 'An employee'):
         return f"{x} is given his monthly salary of {self.MonthlySalary} dollars."
@@ -88,6 +92,7 @@ class Restaurant(Building):
         self.NumberOfTables = NumberOfTables
         self.NumberOfChefs = NumberOfChefs
         self.NumberOfWaiters = NumberOfWaiters
+        BuildingList.append(f"{self.Name} {self.Building}")
     
     def Order(self,x):
         if str(x).isdigit() and int(x) <= self.NumberOfMenuItems :
@@ -125,6 +130,7 @@ class Mall(Building):
         self.Usage = 'Commercial/Public/Business'
         self.NumberOfLevels = NumberOfLevels
         self.NumberOfShops = NumberOfShops
+        BuildingList.append(f"{self.Name} {self.Building}")
     
     def Advertisement(self):
         return f"This majestic {self.Building} was built {self.Age} years ago and is owned by {self.Owner}. Come and enjoy our numerous shops, {self.NumberOfShops} to be exact. And don't forget to check the Food Level!"
@@ -147,6 +153,7 @@ class Bank(Building):
         self.NumberOfSafes = NumberOfSafes
         self.NumberOfEmployees = NumberOfEmployees
         self.__NumberOfGuards = NumberOfGuards
+        BuildingList.append(f"{self.Name} {self.Building}")
         
     def Deposit(self,x='A customer',y='An amount'):
         return f"{x} has deposited {y} into his account in {self.Name} {self.Building}."
@@ -171,6 +178,7 @@ class Theater(Building):
         self.Usage = 'Entertainment/Commercial'
         self.NumberOfTheaters = NumberOfTheaters
         self.NumberOfEmployees = NumberOfEmployees
+        BuildingList.append(f"{self.Name} {self.Building}")
     
     def Watch(self,x='An Audience Member'):
         return f"{x} is watching a movie in the hall of {self.Name} {self.Building}. Please remain quiet."
@@ -188,6 +196,7 @@ class Church(Building):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
         self.Usage = 'Religious'
         self.NumberOfClergies = NumberOfClergies
+        BuildingList.append(f"{self.Name} {self.Building}")
         
     def Pray(self,x='A Christian'):
         return f"{x} is praying inside {self.name} Church."
@@ -205,6 +214,7 @@ class Mosque(Building):
         super().__init__(Name,Building,Owner,Address,Age,Worth) 
         self.Usage = 'Religious'
         self.NumberOfKhadems = NumberOfKhadems
+        BuildingList.append(f"{self.Name} {self.Building}")
         
     def Pray(self,x='A Muslim'):
         return f"{x} is praying inside {self.name} Mosque."
@@ -223,6 +233,7 @@ class Shop(Building):
         self.Usage = 'Commercial'
         self.Category = Category
         self.NumberOfEmployees = NumberOfEmployees
+        BuildingList.append(f"{self.Name} {self.Building}")
     
     def Advertisement(self):
         return f"Come on in and check out the items we sell in {self.Name}! Cheap Prices and Great Quality for {self.Category}!"
@@ -242,6 +253,7 @@ class Warehouse(Building):
         self.NumberOfStorages = NumberOfStorages
         self.NumberOfEmployees = NumberOfEmployees
         self.__NumberOfGuards = NumberOfGuards
+        BuildingList.append(f"{self.Name} {self.Building}")
     
     def StoreItem(self,x='An item',y='a Client'):
         return f"{x} was stored inside {y}s Storage Unit in {self.Name} {self.Building}."
@@ -263,6 +275,7 @@ class ParkingLot(Building):
         self.Usage = 'Community Type'
         self.ParkingFee = ParkingFee
         self.NumberOfParkingSpaces = NumberOfParkingSpaces
+        BuildingList.append(f"{self.Name} {self.Building}")
         
     def Park(self,x='A person'):
         return f"{x} parked their car in {self.Name} {self.Building}."
@@ -281,6 +294,7 @@ class Park(Building):
         self.Usage = 'Public'
         self.NumberOfBenches = NumberOfBenches
         self.NumberOfTrashbins = NumberOfTrashbins
+        BuildingList.append(f"{self.Name} {self.Building}")
         
     def Rest(self,x='A person'):
         return f"{x} is resting in {self.Name} {self.Building}."
@@ -296,6 +310,7 @@ class Library(Building):
         self.Usage = 'Public/Educational'
         self.NumberOfBooks = NumberOfBooks
         self.NumberOfLibrarians = NumberOfLibrarians
+        BuildingList.append(f"{self.Name} {self.Building}")
         
     def RentBook(self,x='A person',y='a book'):
         return f"{x} rented {y} from {self.Name} {self.Building}."
@@ -311,6 +326,7 @@ class FamilyHome(Building):
         self.Usage = 'Residential'
         self.NumberOfFamilyMembers = NumberOfFamilyMembers
         self.NumberOfPets = NumberOfPets
+        BuildingList.append(f"{self.Name} {self.Building}")
 
     def Introduction(self):
         return f"The family of {self.Owner} lives in this lovely house, along with {self.NumberOfFamilyMembers} others and {self.NumberOfPets} pets."
@@ -323,6 +339,7 @@ class TownHall(Building):
         self.Usage = 'Governmental'
         self.NumberOfEmployees = NumberOfEmployees
         self.NumberOfElectedOfficials = NumberOfElectedOfficials
+        BuildingList.append(f"{self.Name} {self.Building}")
 
     def StartMeeting(self,x = 'A committee member'):
         return f"{x} starts a meeting in {self.Name} {self.Building}."
@@ -333,7 +350,7 @@ class TownHall(Building):
     def Vote(self,x = 'A committee member',y='a proposition'):
         return f"{x} votes for {y} in a meeting in {self.Name} {self.Building}."
 
-#Examples
+#Examples of objects made from our subclasses.
 
 Apartment101 = Apartment('Luxury','Apartment','Mr Smith','Nova Lane, Bobcat St., MO 64473-7342',64,100000,5,10,26,'Jones',75)
 print(Apartment101.Description())
@@ -362,8 +379,4 @@ print(Bank101.Description())
 print(Bank101.Security())
 print(Bank101.Sell('The Ellison Family'))
 
-#Composition:
-Builds = []
-for i in Building.__subclasses__():
-    Builds.append(str(i)[17:-2])
-print('Builds =',Builds)
+print('Buildings =',BuildingList) #List of all available objects
