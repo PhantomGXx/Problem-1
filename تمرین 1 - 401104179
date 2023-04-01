@@ -156,9 +156,9 @@ class Bank(Building):
         super().__init__(Name,Owner,Address,Age,Worth) 
         self.Building = 'Bank'
         self.Usage = 'Business'
-        self.NumberOfSafes = NumberOfSafes
+        self.__NumberOfSafes = NumberOfSafes
         self.NumberOfEmployees = NumberOfEmployees
-        self.__NumberOfGuards = NumberOfGuards
+        self.NumberOfGuards = NumberOfGuards
         BuildingList.append(f"{self.Name} {self.Building}")
         
     def Deposit(self,x='A customer',y='An amount'):
@@ -171,7 +171,7 @@ class Bank(Building):
         return f"{x} has transfered {y} from his account in {self.Name} {self.Building} to {z}."
     
     def Security(self):
-        if int(self.__NumberOfGuards) >= int(self.NumberOfSafes / 5):
+        if int(self.NumberOfGuards) >= int(self.__NumberOfSafes / 5):
             return f"{self.Name} {self.Building} has a reasonable amount of Security."
         else:
             return f"{self.Name} {self.Building} does not have a reasonable amount of Security."
@@ -349,11 +349,12 @@ class FamilyHome(Building):
 
 #Subclass 15
 class TownHall(Building):   
-    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfEmployees,NumberOfElectedOfficials):
+    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfEmployees,NumberOfImportantDocuments,NumberOfElectedOfficials):
         super().__init__(Name,Owner,Address,Age,Worth) 
         self.Building = 'Town Hall'
         self.Usage = 'Governmental'
         self.NumberOfEmployees = NumberOfEmployees
+        self.__NumberOfImportantDocuments = NumberOfImportantDocuments
         self.NumberOfElectedOfficials = NumberOfElectedOfficials
         BuildingList.append(f"{self.Name} {self.Building}")
 
