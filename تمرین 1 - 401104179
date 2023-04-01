@@ -368,31 +368,31 @@ class TownHall(Building):
 
 #Examples
 
-Apartment101 = Apartment('Luxury','Mr Smith','Nova Lane, Bobcat St., MO 64473-7342',64,100000,5,10,26,'Jones',75)
-print(Apartment101.Description())
-print(Apartment101.NumberOfResidents)
-print(Apartment101.Advertisement())
-print(Apartment101.Partying('Jane'))
-print(Apartment101.Report())
+LuxuryApartment = Apartment('Luxury','Mr Smith','Nova Lane, Bobcat St., MO 64473-7342',64,100000,5,10,26,'Jones',75)
+print(LuxuryApartment.Description())
+print(LuxuryApartment.NumberOfResidents)
+print(LuxuryApartment.Advertisement())
+print(LuxuryApartment.Partying('Jane'))
+print(LuxuryApartment.Report())
 
 
-Library101 = Library('Calabasus','Leone Learning Institute','Calabasus Avenue, PO 843251',16,25000,3200,8)
-print(Library101.Description())
-print(Library101.NumberOfBooks)
-print(Library101.Enter('Nick'))
-print(Library101.RentBook('Sam','The Spiderwich Chronicles'))
+CalabasusLibrary = Library('Calabasus','Leone Learning Institute','Calabasus Avenue, PO 843251',16,25000,3200,8)
+print(CalabasusLibrary.Description())
+print(CalabasusLibrary.NumberOfBooks)
+print(CalabasusLibrary.Enter('Nick'))
+print(CalabasusLibrary.RentBook('Sam','The Spiderwich Chronicles'))
 
 
-Restaurant101 = Restaurant('Olive Guarden','The Cheesecake Co.','Blue Lake St.,Swan Alley, Third Building from the block',6,40000,22,10,4,4)
-print(Restaurant101.Description())
-print(Restaurant101.NumberOfChefs)
-print(Restaurant101.Rate('Max'))
-print(Restaurant101.Rate('The inspector','3'))
+OliveGuardenRestaurant = Restaurant('Olive Guarden','The Cheesecake Co.','Blue Lake St.,Swan Alley, Third Building from the block',6,40000,22,10,4,4)
+print(OliveGuardenRestaurant.Description())
+print(OliveGuardenRestaurant.NumberOfChefs)
+print(OliveGuardenRestaurant.Rate('Max'))
+print(OliveGuardenRestaurant.Rate('The inspector','3'))
 
 
-Bank101 = Bank('Citi','The Richardson Family','Saint Floren, Rudnick Ave',21,140000,32,15,8)
-print(Bank101.Description())
-print(Bank101.Security())
-print(Bank101.Sell('The Ellison Family'))
+CitiBank = Bank('Citi','The Richardson Family','Saint Floren, Rudnick Ave',21,140000,32,15,8)
+print(CitiBank.Description())
+print(CitiBank.Security())
+print(CitiBank.Sell('The Ellison Family'))
 
 print('Building List =',BuildingList) 
