@@ -1,12 +1,12 @@
 # 401104179
 # تمرین اول 
 
-BuildingList = [] #For composition of classes.
+BuildingList = []
 
 class Building: 
-    def __init__(self,Name,Building,Owner,Address,Age,Worth):
+    def __init__(self,Name,Owner,Address,Age,Worth):
         self.Name = Name
-        self.Building = Building
+        self.Building = ''
         self.Owner = Owner
         self.Usage = ''
         self._Address = Address
@@ -31,8 +31,9 @@ class Building:
  
 #Subclass 1   
 class Apartment(Building):
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfLevels,NumberOfApartments,NumberOfResidents,CaretakerName,MonthlyPayment):
-        super().__init__(Name,Building,Owner,Address,Age,Worth)
+    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfLevels,NumberOfApartments,NumberOfResidents,CaretakerName,MonthlyPayment):
+        super().__init__(Name,Owner,Address,Age,Worth)
+        self.Building = 'Apartment'
         self.Usage = 'Residential'
         self.NumberOfLevels = NumberOfLevels
         self.NumberOfApartments = NumberOfApartments
@@ -62,8 +63,9 @@ class Apartment(Building):
  
 #Subclass 2    
 class Office(Building):
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfEmployees,NumberOfOffices,MonthlySalary):
-        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfEmployees,NumberOfOffices,MonthlySalary):
+        super().__init__(Name,Owner,Address,Age,Worth) 
+        self.Building = 'Office'
         self.Usage = 'Business/Commercial'
         self.NumberOfEmployees = NumberOfEmployees
         self.NumberOfOffices = NumberOfOffices
@@ -85,8 +87,9 @@ class Office(Building):
    
 #Subclass 3   
 class Restaurant(Building):
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfMenuItems,NumberOfTables,NumberOfChefs,NumberOfWaiters):
-        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfMenuItems,NumberOfTables,NumberOfChefs,NumberOfWaiters):
+        super().__init__(Name,Owner,Address,Age,Worth) 
+        self.Building = 'Restaurant'
         self.Usage = 'Commercial'
         self.NumberOfMenuItems = NumberOfMenuItems
         self.NumberOfTables = NumberOfTables
@@ -125,8 +128,9 @@ class Restaurant(Building):
 
 #Subclass 4    
 class Mall(Building):
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfLevels,NumberOfShops):
-        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfLevels,NumberOfShops):
+        super().__init__(Name,Owner,Address,Age,Worth) 
+        self.Building = 'Mall'
         self.Usage = 'Commercial/Public/Business'
         self.NumberOfLevels = NumberOfLevels
         self.NumberOfShops = NumberOfShops
@@ -147,8 +151,9 @@ class Mall(Building):
  
 #Subclass 5    
 class Bank(Building):
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfSafes,NumberOfEmployees,NumberOfGuards):
-        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfSafes,NumberOfEmployees,NumberOfGuards):
+        super().__init__(Name,Owner,Address,Age,Worth) 
+        self.Building = 'Bank'
         self.Usage = 'Business'
         self.NumberOfSafes = NumberOfSafes
         self.NumberOfEmployees = NumberOfEmployees
@@ -173,8 +178,9 @@ class Bank(Building):
 
 #Subclass 6
 class Theater(Building):
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfTheaters,NumberOfEmployees):
-        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfTheaters,NumberOfEmployees):
+        super().__init__(Name,Owner,Address,Age,Worth) 
+        self.Building = 'Theater'
         self.Usage = 'Entertainment/Commercial'
         self.NumberOfTheaters = NumberOfTheaters
         self.NumberOfEmployees = NumberOfEmployees
@@ -192,8 +198,9 @@ class Theater(Building):
     
 #Subclass 7
 class Church(Building):
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfClergies):
-        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfClergies):
+        super().__init__(Name,Owner,Address,Age,Worth) 
+        self.Building = 'Church'
         self.Usage = 'Religious'
         self.NumberOfClergies = NumberOfClergies
         BuildingList.append(f"{self.Name} {self.Building}")
@@ -210,8 +217,9 @@ class Church(Building):
 
 #Subclass 8
 class Mosque(Building):
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfKhadems):
-        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfKhadems):
+        super().__init__(Name,Owner,Address,Age,Worth) 
+        self.Building = 'Mosque'
         self.Usage = 'Religious'
         self.NumberOfKhadems = NumberOfKhadems
         BuildingList.append(f"{self.Name} {self.Building}")
@@ -228,8 +236,9 @@ class Mosque(Building):
 
 #Subclass 9
 class Shop(Building):
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,Category,NumberOfEmployees):
-        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+    def __init__(self,Name,Owner,Address,Age,Worth,Category,NumberOfEmployees):
+        super().__init__(Name,Owner,Address,Age,Worth) 
+        self.Building = 'Shop'
         self.Usage = 'Commercial'
         self.Category = Category
         self.NumberOfEmployees = NumberOfEmployees
@@ -247,8 +256,9 @@ class Shop(Building):
 
 #Subclass 10
 class Warehouse(Building):
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfStorages,NumberOfEmployees,NumberOfGuards):
-        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfStorages,NumberOfEmployees,NumberOfGuards):
+        super().__init__(Name,Owner,Address,Age,Worth) 
+        self.Building = 'Warehouse'
         self.Usage = 'Commercial'
         self.NumberOfStorages = NumberOfStorages
         self.NumberOfEmployees = NumberOfEmployees
@@ -270,8 +280,9 @@ class Warehouse(Building):
 
 #Subclass 11
 class ParkingLot(Building):
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,ParkingFee,NumberOfParkingSpaces):
-        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+    def __init__(self,Name,Owner,Address,Age,Worth,ParkingFee,NumberOfParkingSpaces):
+        super().__init__(Name,Owner,Address,Age,Worth) 
+        self.Building = 'Parking Lot'
         self.Usage = 'Community Type'
         self.ParkingFee = ParkingFee
         self.NumberOfParkingSpaces = NumberOfParkingSpaces
@@ -289,8 +300,9 @@ class ParkingLot(Building):
         
 #Subclass 12
 class Park(Building):
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfBenches,NumberOfTrashbins):
-        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfBenches,NumberOfTrashbins):
+        super().__init__(Name,Owner,Address,Age,Worth) 
+        self.Building = 'Park'
         self.Usage = 'Public'
         self.NumberOfBenches = NumberOfBenches
         self.NumberOfTrashbins = NumberOfTrashbins
@@ -305,8 +317,9 @@ class Park(Building):
 
 #Subclass 13
 class Library(Building):
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfBooks,NumberOfLibrarians):
-        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfBooks,NumberOfLibrarians):
+        super().__init__(Name,Owner,Address,Age,Worth) 
+        self.Building = 'Library'
         self.Usage = 'Public/Educational'
         self.NumberOfBooks = NumberOfBooks
         self.NumberOfLibrarians = NumberOfLibrarians
@@ -321,8 +334,9 @@ class Library(Building):
 
 #Subclass 14
 class FamilyHome(Building):
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfFamilyMembers,NumberOfPets,NumberOfBathrooms):
-        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfFamilyMembers,NumberOfPets,NumberOfBathrooms):
+        super().__init__(Name,Owner,Address,Age,Worth) 
+        self.Building = 'Family Home'
         self.Usage = 'Residential'
         self.NumberOfFamilyMembers = NumberOfFamilyMembers
         self.NumberOfPets = NumberOfPets
@@ -334,8 +348,9 @@ class FamilyHome(Building):
 
 #Subclass 15
 class TownHall(Building):   
-    def __init__(self,Name,Building,Owner,Address,Age,Worth,NumberOfEmployees,NumberOfElectedOfficials):
-        super().__init__(Name,Building,Owner,Address,Age,Worth) 
+    def __init__(self,Name,Owner,Address,Age,Worth,NumberOfEmployees,NumberOfElectedOfficials):
+        super().__init__(Name,Owner,Address,Age,Worth) 
+        self.Building = 'Town Hall'
         self.Usage = 'Governmental'
         self.NumberOfEmployees = NumberOfEmployees
         self.NumberOfElectedOfficials = NumberOfElectedOfficials
@@ -350,9 +365,9 @@ class TownHall(Building):
     def Vote(self,x = 'A committee member',y='a proposition'):
         return f"{x} votes for {y} in a meeting in {self.Name} {self.Building}."
 
-#Examples of objects made from our subclasses.
+#Examples
 
-Apartment101 = Apartment('Luxury','Apartment','Mr Smith','Nova Lane, Bobcat St., MO 64473-7342',64,100000,5,10,26,'Jones',75)
+Apartment101 = Apartment('Luxury','Mr Smith','Nova Lane, Bobcat St., MO 64473-7342',64,100000,5,10,26,'Jones',75)
 print(Apartment101.Description())
 print(Apartment101.NumberOfResidents)
 print(Apartment101.Advertisement())
@@ -360,23 +375,21 @@ print(Apartment101.Partying('Jane'))
 print(Apartment101.Report())
 
 
-Library101 = Library('Calabasus','Library','Leone Learning Institute','Calabasus Avenue, PO 843251',16,25000,3200,8)
+Library101 = Library('Calabasus','Leone Learning Institute','Calabasus Avenue, PO 843251',16,25000,3200,8)
 print(Library101.Description())
 print(Library101.NumberOfBooks)
 print(Library101.Enter('Nick'))
 print(Library101.RentBook('Sam','The Spiderwich Chronicles'))
 
 
-Restaurant101 = Restaurant('Olive Guarden','Restaurant','The Cheesecake Co.','Blue Lake St.,Swan Alley, Third Building from the block',6,40000,22,10,4,4)
+Restaurant101 = Restaurant('Olive Guarden','The Cheesecake Co.','Blue Lake St.,Swan Alley, Third Building from the block',6,40000,22,10,4,4)
 print(Restaurant101.Description())
 print(Restaurant101.NumberOfChefs)
 print(Restaurant101.Rate('Max'))
 print(Restaurant101.Rate('The inspector','3'))
 
 
-Bank101 = Bank('Citi','Bank','The Richardson Family','Saint Floren, Rudnick Ave',21,140000,32,15,8)
+Bank101 = Bank('Citi','The Richardson Family','Saint Floren, Rudnick Ave',21,140000,32,15,8)
 print(Bank101.Description())
 print(Bank101.Security())
 print(Bank101.Sell('The Ellison Family'))
-
-print('Buildings =',BuildingList) #List of all available objects
