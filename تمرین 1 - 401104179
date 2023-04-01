@@ -1,7 +1,7 @@
 # 401104179
 # تمرین اول 
 
-BuildingList = []
+BuildingList = [] #A List to imitate Composition.
 
 class Building: 
     def __init__(self,Name,Owner,Address,Age,Worth):
@@ -12,6 +12,7 @@ class Building:
         self._Address = Address
         self.Age = Age
         self.Worth = Worth
+        BuildingList.append(f"{self.Name} {self.Building}")
         
     def Description(self):
         return f"{self.Name} {self.Building} is owned by {self.Owner} and used as a(n) {self.Usage} building by the address {self._Address}, built {self.Age} years ago and worth {self.Worth} dollars."
@@ -393,3 +394,5 @@ Bank101 = Bank('Citi','The Richardson Family','Saint Floren, Rudnick Ave',21,140
 print(Bank101.Description())
 print(Bank101.Security())
 print(Bank101.Sell('The Ellison Family'))
+
+print('Building List =',BuildingList) 
