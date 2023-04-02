@@ -257,6 +257,8 @@ class Shop(Building):
 
 #Subclass 10
 class Warehouse(Building):
+    global Storage
+    Storage = [ 'Other Items' ]
     def __init__(self,Name,Owner,Address,Age,Worth,NumberOfStorages,NumberOfEmployees,NumberOfGuards):
         super().__init__(Name,Owner,Address,Age,Worth) 
         self.Building = 'Warehouse'
@@ -265,11 +267,16 @@ class Warehouse(Building):
         self.NumberOfEmployees = NumberOfEmployees
         self.__NumberOfGuards = NumberOfGuards
         BuildingList.append(f"{self.Name} {self.Building}")
-    
+        
     def StoreItem(self,x='An item',y='a Client'):
+        if x != 'An item':
+            Storage.append(x)
         return f"{x} was stored inside {y}s Storage Unit in {self.Name} {self.Building}."
         
     def CollectItem(self,x='An item',y='a Client'):
+        if x != 'An item':
+            if Storage.count(x) > 0:
+                Storage.remove(x)
         return f"{x} was collected from {y}s Storage Unit in {self.Name} {self.Building}."
    
     def Security(self):
@@ -395,5 +402,8 @@ CitiBank = Bank('Citi','The Richardson Family','Saint Floren, Rudnick Ave',21,14
 print(CitiBank.Description())
 print(CitiBank.Security())
 print(CitiBank.Sell('The Ellison Family'))
+
+MaxStorage = Warehouse('Maxs','Max Freeman','Always behind an Arbys',3,4000,10,2,4)
+print(MaxStorage.StoreItem('An axe','Jakes'))
 
 print('Building List =',BuildingList) 
