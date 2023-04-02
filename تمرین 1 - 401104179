@@ -404,6 +404,6 @@ print(CitiBank.Security())
 print(CitiBank.Sell('The Ellison Family'))
 
 MaxStorage = Warehouse('Maxs','Max Freeman','Always behind an Arbys',3,4000,10,2,4)
-print(MaxStorage.StoreItem('An axe','Jakes'))
+print(MaxStorage.StoreItem('An axe','Jake'))
 
 print('Building List =',BuildingList) 
